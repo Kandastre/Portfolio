@@ -48,6 +48,7 @@ export default function Animated() {
       });
     });
   }, []);
-  
-  return null;
+
+  // Retourne un élément JSX vide
+  return <div className="animated-placeholder"></div>;
 }
