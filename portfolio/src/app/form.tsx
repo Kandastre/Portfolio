@@ -1,50 +1,60 @@
-import React, { useRef, FormEvent } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
 
 const EmailForm = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  const sendEmail = (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
 
-    emailjs.sendForm('service_2cot8re', 'contact_form', form.current!, 'rkIIDC6lpWt6aBBDr')
-      .then(
-        (result) => {
-          alert('Email envoyé avec succès');
-        },
-        (error) => {
-          alert('Erreur lors de l\'envoi de l\'email: ' + error.text);
-        },
-      );
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, subject, message }),
+    });
+
+    if (response.ok) {
+      alert('Email envoyé avec succès');
+    } else {
+      alert('Erreur lors de l\'envoi de l\'email');
+    }
   };
 
   return (
-    <fieldset>
-      <form ref={form} onSubmit={sendEmail} className='full'>
-        <h1 className='title-form'>Contact</h1>
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Votre email"
-          required
-          className="full"
-        />
-        <input
-          type="text"
-          name="subject"
-          placeholder="Sujet"
-          required
-          className="full"
-        />
-        <textarea
-          name="message"
-          placeholder="Message"
-          required
-          className="full"
-        />
-        <button type="submit" className="button-form">Envoyer</button>
-      </form>
-    </fieldset>
+    <div className="container">
+      <fieldset>
+        <form onSubmit={handleSubmit} className='full'>
+          <h1 className='title-form'>Contact</h1>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Votre email"
+            required
+            className="full"
+          />
+          <input
+            type="text"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            placeholder="Sujet"
+            required
+            className="full"
+          />
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Message"
+            required
+            className="full"
+          />
+          <button type="submit" className="button-form">Envoyer</button>
+        </form>
+      </fieldset>
+    </div>
   );
 };
 
