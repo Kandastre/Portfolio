@@ -3,13 +3,38 @@ import React, { useEffect, useState } from 'react';
 const AboutMe = () => {
   const fullText = `
     <section>
-      <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">À propos de moi</h1>
-      <p>Je m'appelle <strong>Mehdi Benouar</strong>, un développeur web passionné et dynamique, actuellement en alternance chez WEB@CADEMY by EPITECH à Lyon. Mon parcours académique et professionnel m'a permis de développer une solide expertise en développement web, en particulier avec des technologies telles que PHP (Laravel, Symfony), JavaScript (React, Node.js, Express), et bien d'autres.</p>
-      <p>Mon aventure dans le développement web a débuté avec des expériences variées allant de la piscine de programmation intensive à l'École 42, à la certification RNCP niveau 5 obtenue chez EPITECH. Cette formation rigoureuse m'a préparé à relever des défis complexes et à livrer des projets de qualité.</p>
-      <p>Outre mes compétences techniques, je suis reconnu pour mon autonomie, ma polyvalence, et ma capacité à travailler efficacement en équipe. Mon expérience professionnelle diversifiée, incluant des rôles chez ABR Technologies et ISS Renault Trucks, a affiné ma réactivité et mon sens du service.</p>
-      <p>En dehors du travail, je suis un joueur semi-professionnel de League of Legends et un grand fan de game design, ce qui alimente ma créativité et mon approche innovante dans le développement web. Passionné par la science et la culture populaire, je m'efforce toujours d'intégrer de nouvelles idées et perspectives dans mes projets.</p>
-      <p>Avec une forte capacité d'adaptation et un excellent relationnel, je suis toujours prêt à apprendre de nouvelles technologies et à relever de nouveaux défis pour continuer à évoluer dans le domaine du développement web.</p>
-    </section>`;
+    <h2>À propos de moi</h2>
+    <p>Je m'appelle Mehdi Benouar, un développeur Full Stack passionné et dynamique, actuellement en alternance chez EPITECH Lyon dans le cadre du programme WEB@CADEMY. Avec une solide formation en développement web et une expérience pratique diversifiée, je suis dédié à la création de solutions numériques innovantes et performantes.</p>
+
+    <h3>Parcours Académique et Formation</h3>
+    <ul>
+        <li><strong>WEB@CADEMY by EPITECH (2023-2025)</strong> : Certification RNCP niveau 5, où j'ai travaillé sur divers projets tels que des sites de rencontre, des sites de e-commerce, et des applications comme Twitter et Spotify.</li>
+        <li><strong>Piscine / Ecole 42 (Septembre 2023)</strong> : Formation intensive en langage C et SHELL.</li>
+        <li><strong>Diplôme National du Brevet et BAC PRO SEN</strong> : Acquis au Collège Jules Michelet et au Lycée professionnel Marc Seguin à Vénissieux.</li>
+    </ul>
+
+    <h3>Expériences Professionnelles</h3>
+    <ul>
+        <li><strong>Intérimaire (2022-2023)</strong> : Missions variées dans la manutention et la vente, développant mon adaptabilité et ma polyvalence.</li>
+        <li><strong>Opérateur Polyvalent chez ISS Renault Trucks (2021)</strong> : Vérification et assistance à la fabrication de pièces.</li>
+        <li><strong>Employé Polyvalent chez ABR Technologies (2018-2019)</strong> : Gestion des commandes de CD-DVD et création de jaquettes avec Photoshop.</li>
+        <li><strong>Secrétaire Informatique Polyvalent en Stage (2015-2017)</strong> : Stages nécessaires pour le BAC PRO, offrant une première immersion dans le monde professionnel.</li>
+    </ul>
+
+    <h3>Compétences Techniques</h3>
+    <ul>
+        <li><strong>Langages et Frameworks</strong> : C, PHP/Laravel/Symfony, JS/React, Node.js/Express, Python, HTML, CSS/Tailwind, SQL/MongoDB, Bash.</li>
+        <li><strong>Outils</strong> : Wordpress, Photoshop.</li>
+        <li><strong>Langues</strong> : Français (courant), Anglais (B2).</li>
+    </ul>
+
+    <h3>Atouts Personnels</h3>
+    <p>Je me distingue par ma réactivité, ma rigueur, mon esprit d'équipe et ma capacité à garder mon sang-froid en toutes circonstances. Mon adaptabilité et mon autonomie me permettent de m'intégrer facilement dans différentes équipes et projets.</p>
+
+    <h3>Centres d'Intérêt</h3>
+    <p>En dehors du développement, je suis un joueur semi-professionnel de League of Legends, un passionné de game design, et un curieux insatiable de sciences et de culture populaire.</p>
+</section>
+`;
   
   const [text, setText] = useState("");
   
