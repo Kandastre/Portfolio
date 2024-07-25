@@ -50,5 +50,5 @@ export default function Animated() {
   }, []);
 
   // Retourne un élément JSX vide
-  return <div className="animated-placeholder"></div>;
+  return null;
 }
