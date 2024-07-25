@@ -88,7 +88,7 @@ export default function Page() {
         </div>
       </div>
       <div className="content">
-          {activeComponent === 'cv' && <div className="cv-container"><ShowCV pdfUrl="/CV_2024-06-18_Mehdi_Benouar.pdf" /></div>}
+          {activeComponent === 'cv' && <div className="cv-container"><ShowCV pdfUrl="/CV_2024-07-19_Mehdi_Benouar-1.pdf" /></div>}
           {activeComponent === 'projet' && <div className="projet-w"><ShowProjet /></div>}
           {activeComponent === 'about' && <div className="about-me"><AboutMe /></div>}
           {activeComponent === 'contact' && <div className="form-container"><EmailForm /></div>}
